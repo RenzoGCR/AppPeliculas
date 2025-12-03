@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/addLibro"
+        android:title="@string/nueva_pelicula"
+        android:icon="@drawable/ic_addpelicula"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/delete"
+        android:title="@string/limpiar"
+        android:icon="@drawable/delete"
+        app:showAsAction="ifRoom"/>
+</menu>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AppPeliculas</string>
+    <string name="pelicula">Pelicula</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="nueva_pelicula">Nueva Pelicula</string>
+    <string name="poster">Poster</string>
+    <string name="anho">Año</string>
+    <string name="duracion">Duracion</string>
+    <string name="volver">Volver</string>
+    <string name="limpiar">Limpiar</string>
+
+</resources>

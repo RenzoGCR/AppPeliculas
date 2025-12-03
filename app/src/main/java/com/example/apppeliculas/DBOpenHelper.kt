@@ -44,7 +44,7 @@ class DBOpenHelper private constructor(context: Context?) :
                         "${PeliculaContract.Companion.Entrada.DURACIONCOL},"+
                         "${PeliculaContract.Companion.Entrada.ANHOCOL},"+
                         "${PeliculaContract.Companion.Entrada.PAISCOL})"+
-                        " VALUES (${pelicula.titulo},'${pelicula.descripcion}','${pelicula.poster}',${pelicula.duracion},'${pelicula.anho}','${pelicula.pais}');")
+                        " VALUES ('${pelicula.titulo}','${pelicula.descripcion}',${pelicula.poster},${pelicula.duracion},${pelicula.anho},'${pelicula.pais}');")
             )
         }
     }

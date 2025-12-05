@@ -11,4 +11,10 @@
         android:icon="@drawable/delete"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/buscador"
+        android:title="@string/buscar"
+        android:icon="@drawable/ic_buscador"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="ifRoom"/>
+
 </menu>

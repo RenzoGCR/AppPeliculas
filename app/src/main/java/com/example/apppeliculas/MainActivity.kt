@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
@@ -71,19 +72,24 @@ class MainActivity : AppCompatActivity() {
         binding.rvPelicula.setHasFixedSize(true)
         binding.rvPelicula.itemAnimator= DefaultItemAnimator()
         setupSwipeRefresh()
-        binding.searchView.setOnQueryTextListener(object : OnQueryTextListener,
-            android.widget.SearchView.OnQueryTextListener{
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+
+        val buscar = menu?.findItem(R.id.buscador)
+        val searchView = buscar?.actionView as SearchView
+        searchView.setOnQueryTextListener(object : OnQueryTextListener,
+            SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
+
             override fun onQueryTextChange(p0: String?): Boolean {
                 filterList(p0)
                 return true
             }
         })
-    }
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu,menu)
 
         return true
     }
@@ -166,8 +172,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupSwipeRefresh(){
         binding.srlDatos.setOnRefreshListener {        // Limpia el filtro de búsqueda
-            binding.searchView.setQuery("", false)
-            binding.searchView.clearFocus()
+
 
             // --- INICIO DE LA CORRECCIÓN ---
 

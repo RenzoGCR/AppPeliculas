@@ -33,18 +33,24 @@ class EditarActivity : AppCompatActivity() {
         }
 
         binding.btnAceptar.setOnClickListener {
-            pelicula?.let {
+            pelicula?.let { peliculaParaActualizar ->
                 val nuevoTitulo = binding.tvPelicula.text.toString().trim()
 
                 if (nuevoTitulo.isNotEmpty()) {
                     // 💡 Lógica CLAVE: Solo se modifica la instancia local de 'Pelicula'
                     // ESTO NO TOCA NINGÚN PeliculaProvider
-                    it.titulo = nuevoTitulo
+                    peliculaParaActualizar.titulo = nuevoTitulo
+
+                    // --- INICIO DE LA CORRECCIÓN ---
+                    // 2. Llama al DAO para actualizar la base de datos
+                    val miDAO = PeliculaDAO()
+                    miDAO.actualizarBBDD(this, peliculaParaActualizar)
+                    // --- FIN DE LA CORRECCIÓN ---
 
                     // Preparamos el Intent de resultado
                     val resultadoIntent = Intent()
                     // Devolvemos el objeto Pelicula modificado
-                    resultadoIntent.putExtra("pelicula_actualizada", it)
+                    resultadoIntent.putExtra("pelicula_actualizada", peliculaParaActualizar)
                     setResult(RESULT_OK, resultadoIntent)
 
                     finish()

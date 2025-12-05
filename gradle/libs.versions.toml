@@ -13,6 +13,9 @@ recyclerview = "1.4.0"
 swipeversion = "1.1.0"
 swiperefreshlayout = "1.1.0"
 
+datastorePreferences = "1.1.1"
+
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -25,6 +28,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-swiperefreshlayout = { group = "androidfx.swiperefreshlayout", name = "swiperefreshlayout",version.ref = "swipeversion"}
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
 
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

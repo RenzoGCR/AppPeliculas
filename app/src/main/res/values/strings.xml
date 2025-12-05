@@ -9,4 +9,13 @@
     <string name="volver">Volver</string>
     <string name="limpiar">Limpiar</string>
 
+    <string name="escribe_tu_e_mail">Escribe tu e-mail</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="recordar_usuario">Recordar usuario</string>
+    <string name="acepto_los_terminos">Acepto los términos</string>
+    <string name="edad">Edad</string>
+    <string name="nombre">Nombre</string>
+
+
+
 </resources>

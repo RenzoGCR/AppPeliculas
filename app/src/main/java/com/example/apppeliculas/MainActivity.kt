@@ -84,6 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu,menu)
+
         return true
     }
 
@@ -171,16 +172,17 @@ class MainActivity : AppCompatActivity() {
             // --- INICIO DE LA CORRECCIÓN ---
 
             // 1. Carga la lista fresca desde LibroProvider, NO desde miDAO.
-            val nuevosLibros = PeliculaProvider.cargarLista()
+            val peliculasDesdeDB = miDAO.cargarLista(this)
 
             // 2. LIMPIA la lista principal de la Activity
             listaPeliculas.clear()
 
             // 3. AÑADE los nuevos libros a la lista principal
-            listaPeliculas.addAll(nuevosLibros)
+            listaPeliculas.addAll(peliculasDesdeDB)
 
             // 4. Pasa esta lista completa y actualizada al adapter para que la muestre.
-            adapter.setFilteredList(listaPeliculas)
+            adapter.notifyDataSetChanged()
+
 
             // --- FIN DE LA CORRECCIÓN ---
 

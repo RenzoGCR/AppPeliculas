@@ -10,4 +10,5 @@
         android:title="@string/limpiar"
         android:icon="@drawable/delete"
         app:showAsAction="ifRoom"/>
+
 </menu>

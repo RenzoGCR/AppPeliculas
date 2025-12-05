@@ -18,5 +18,12 @@
 
     <string name="buscar">Buscar</string>
 
+    <string name="correo_electronico">Correo electrónico</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="recordar">Recordar</string>
+    <string name="email">Correo electrónico</string>
+    <string name="caracteres">Al menos 8 caracteres</string>
+
 
 </resources>
